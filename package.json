@@ -1,6 +1,6 @@
 {
   "name": "tagster",
-  "version": "0.0.4",
+  "version": "1.0.0",
   "description": "Tagster is simple library which is helping you create html strings with ease.",
   "main": "tagster.js",
   "scripts": {

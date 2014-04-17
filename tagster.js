@@ -77,13 +77,13 @@
             return this;
         },
 
-        populateWidth: function (content) {
+        populateWith: function (content) {
             if ( typeof(content) == 'function') {
                 this.content = content();
             } else if ( typeof(content) == 'string') {
                 this.content = content;
             } else {
-                throw new Error('populateWidth method argument can be function or string');
+                throw new Error('populateWith method argument can be function or string');
             }
 
             this.createClosingElement();

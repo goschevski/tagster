@@ -30,13 +30,13 @@ You can populate element on two ways. First is passing by a string as third para
 var header = new Tagster('header', { role: 'header' }, 'I am a header!').element;
 // <header role="header">I am a header!</header>
 ```
-Second way is to chain populateWidth method which accepts function or string.
+Second way is to chain populateWith method which accepts function or string.
 
 ```
-var header = new Tagster('header', { role: 'header' }).populateWidth('I am a header!').element;
+var header = new Tagster('header', { role: 'header' }).populateWith('I am a header!').element;
 // <header role="header">I am a header!</header>
 
-var header = new Tagster('header', { role: 'header' }).populateWidth(function () {
+var header = new Tagster('header', { role: 'header' }).populateWith(function () {
     return new Tagster('a.logo', { href: '/' }, 'NameOfCompany').element;
 }).element;
 
@@ -88,12 +88,12 @@ var viewport = new Tagster().meta({ name: 'viewport', content: 'width=device-wid
 ```
 var menu = ['home', 'about', 'portfolio', 'contact'];
 
-var nav = new Tagster('nav.nav', { role: 'navigation' }).populateWidth(function () {
-    return new Tagster('ul').populateWidth(function () {
+var nav = new Tagster('nav.nav', { role: 'navigation' }).populateWith(function () {
+    return new Tagster('ul').populateWith(function () {
         var lis = [];
 
         menu.forEach(function (item) {
-            lis.push(new Tagster('li.menu-item').populateWidth(function () {
+            lis.push(new Tagster('li.menu-item').populateWith(function () {
                 return new Tagster('a', { href: '/#' + item }, item).element;
             }).element);
         });

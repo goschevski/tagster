@@ -44,34 +44,34 @@ describe('Tagster', function () {
     });
 
     it('should populate ul with li', function () {
-        var div = new Tagster('ul').populateWidth(function () {
+        var div = new Tagster('ul').populateWith(function () {
             return new Tagster('li', {}, 'About me').element;
         }).element;
         div.should.equal('<ul><li>About me</li></ul>');
     });
 
-    it('should throw error if populateWidth arugment is not function or string', function () {
+    it('should throw error if populateWith arugment is not function or string', function () {
         try {
-            new Tagster('p').populateWidth([1, 2, 3]).element;
+            new Tagster('p').populateWith([1, 2, 3]).element;
         } catch (err) {
-            err.message.should.equal('populateWidth method argument can be function or string');
+            err.message.should.equal('populateWith method argument can be function or string');
         }
     });
 
     it('should populate anchor with string', function () {
-        var anchor = new Tagster('a', { href: '#' }).populateWidth('Click on me!').element;
+        var anchor = new Tagster('a', { href: '#' }).populateWith('Click on me!').element;
         anchor.should.equal('<a href="#">Click on me!</a>');
     });
 
     it('should create navigation', function () {
         var menu = ['home', 'about', 'portfolio', 'contact'];
 
-        var nav = new Tagster('nav.nav', { role: 'navigation' }).populateWidth(function () {
-            return new Tagster('ul').populateWidth(function () {
+        var nav = new Tagster('nav.nav', { role: 'navigation' }).populateWith(function () {
+            return new Tagster('ul').populateWith(function () {
                 var lis = [];
 
                 menu.forEach(function (item) {
-                    lis.push(new Tagster('li.menu-item').populateWidth(function () {
+                    lis.push(new Tagster('li.menu-item').populateWith(function () {
                         return new Tagster('a', { href: '/#' + item }, item).element;
                     }).element);
                 });

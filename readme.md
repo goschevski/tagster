@@ -8,7 +8,7 @@ It works in both node and client-side applications.
 
 ### Elements
 
-```
+```javascript
 var div = new Tagster().element;
 // <div></div>
 
@@ -26,13 +26,13 @@ var custom = new Tagster('polymer-ajax', { url: 'http://example.com/json', handl
 
 You can populate element on two ways. First is passing by a string as third param when creating new element.
 
-```
+```javascript
 var header = new Tagster('header', { role: 'header' }, 'I am a header!').element;
 // <header role="header">I am a header!</header>
 ```
 Second way is to chain populateWith method which accepts function or string.
 
-```
+```javascript
 var header = new Tagster('header', { role: 'header' }).populateWith('I am a header!').element;
 // <header role="header">I am a header!</header>
 
@@ -45,12 +45,12 @@ var header = new Tagster('header', { role: 'header' }).populateWith(function () 
 
 ### Helpers
 
-```
+```javascript
 var jquery = new Tagster().script('js/vendor/jquery.js').element;
 // <script src="js/vendor/jquery.js"></script>
 ```
 
-```
+```javascript
 var style = new Tagster().style('css/style.css').element;
 // <link rel="stylesheet" href="css/style.css">
 ```
@@ -59,7 +59,7 @@ var style = new Tagster().style('css/style.css').element;
 
 Tagster is extensible, so you can create your helpers and methods.
 
-```
+```javascript
 Tagster.prototype.form = function (attrs) {
     this.attrs = attrs;
     this.el = 'form';
@@ -85,7 +85,7 @@ var viewport = new Tagster().meta({ name: 'viewport', content: 'width=device-wid
 
 ### Example
 
-```
+```javascript
 var menu = ['home', 'about', 'portfolio', 'contact'];
 
 var nav = new Tagster('nav.nav', { role: 'navigation' }).populateWith(function () {

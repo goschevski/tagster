@@ -39,7 +39,7 @@
             var withId = this.el.match(/(.+)\#(.+)/);
             if ( withId ) {
                 this.el = withId[1];
-                this.attrs['id'] = withId[2];
+                this.attrs.id = withId[2];
                 return this;
             }
 
@@ -53,7 +53,7 @@
             var onlyId = this.el.match(/\#(.+)/);
             if ( onlyId ) {
                 this.el = 'div';
-                this.attrs['id'] = onlyId[1];
+                this.attrs.id = onlyId[1];
                 return this;
             }
         },
@@ -61,7 +61,7 @@
         createAttributes: function () {
             var attrs = '';
             for ( var key in this.attrs ) {
-                attrs += ' ' + key + '="' + this.attrs[key] + '"'
+                attrs += ' ' + key + '="' + this.attrs[key] + '"';
             }
             this.attributes = attrs;
             return this;

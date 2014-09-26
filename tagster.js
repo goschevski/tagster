@@ -4,10 +4,10 @@
     https://github.com/goschevski/tagster
 */
 ;(function () {
-
     'use strict';
 
     var Tagster = function (el, attrs, content) {
+        // make sure we have some defaults
         this.el = el || 'div';
         this.attrs = attrs || {};
         this.content = content || '';
@@ -28,30 +28,29 @@
         },
 
         elementType: function () {
-
             var withClass = this.el.match(/(.+)\.(.+)/);
-            if ( withClass ) {
+            if (withClass) {
                 this.el = withClass[1];
                 this.attrs['class'] = withClass[2];
                 return this;
             }
 
             var withId = this.el.match(/(.+)\#(.+)/);
-            if ( withId ) {
+            if (withId) {
                 this.el = withId[1];
                 this.attrs.id = withId[2];
                 return this;
             }
 
             var onlyClass = this.el.match(/\.(.+)/);
-            if ( onlyClass ) {
+            if (onlyClass) {
                 this.el = 'div';
                 this.attrs['class'] = onlyClass[1];
                 return this;
             }
 
             var onlyId = this.el.match(/\#(.+)/);
-            if ( onlyId ) {
+            if (onlyId) {
                 this.el = 'div';
                 this.attrs.id = onlyId[1];
                 return this;
@@ -60,8 +59,10 @@
 
         createAttributes: function () {
             var attrs = '';
-            for ( var key in this.attrs ) {
-                attrs += ' ' + key + '="' + this.attrs[key] + '"';
+            for (var key in this.attrs) {
+                if (this.attrs.hasOwnProperty(key)) {
+                    attrs += ' ' + key + '="' + this.attrs[key] + '"';
+                }
             }
             this.attributes = attrs;
             return this;
@@ -78,9 +79,9 @@
         },
 
         populateWith: function (content) {
-            if ( typeof(content) == 'function') {
+            if (typeof content === 'function') {
                 this.content = content();
-            } else if ( typeof(content) == 'string') {
+            } else if (typeof content === 'string') {
                 this.content = content;
             } else {
                 throw new Error('populateWith method argument can be function or string');
@@ -105,7 +106,7 @@
             this.createAttributes();
             this.createElement();
             return this;
-        },
+        }
     };
 
     if (typeof module !== 'undefined' && module.exports) {
@@ -113,5 +114,4 @@
     } else {
         window.Tagster = Tagster;
     }
-
 })();

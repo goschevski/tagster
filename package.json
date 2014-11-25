@@ -12,8 +12,8 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "mocha": "*",
-    "chai": "~1.9.0"
+    "chai": "^1.10.0",
+    "mocha": "*"
   },
   "keywords": [
     "html",

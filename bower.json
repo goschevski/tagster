@@ -1,0 +1,29 @@
+{
+  "name": "tagster",
+  "main": "tagster.js",
+  "version": "1.0.3",
+  "homepage": "https://github.com/goschevski/tagster",
+  "authors": [
+    "Aleksandar Gosevski <gosevskibg@gmail.com>"
+  ],
+  "description": "Tagster is simple library which is helping you create html strings with ease.",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "html",
+    "selector",
+    "element",
+    "tagster"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

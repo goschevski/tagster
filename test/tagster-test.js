@@ -1,5 +1,5 @@
-var Tagster = require("../tagster.js");
-var chai = require("chai");
+var Tagster = require('../tagster.js');
+var chai = require('chai');
 var should = chai.should();
 
 describe('Tagster', function () {
@@ -76,7 +76,7 @@ describe('Tagster', function () {
                     }).element);
                 });
 
-                return lis.join("");
+                return lis.join('');
             }).element;
         }).element;
 
@@ -91,6 +91,11 @@ describe('Tagster', function () {
     it('should create link tag', function () {
         var style = new Tagster().style('css/style.css').element;
         style.should.equal('<link rel="stylesheet" href="css/style.css">');
+    });
+
+    it('should create img tag', function () {
+        var style = new Tagster().img('img/srbija.png', { alt: 'Bog cuva Srbe!' }).element;
+        style.should.equal('<img alt="Bog cuva Srbe!" src="img/srbija.png">');
     });
 
     it('should be extensible', function () {

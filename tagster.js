@@ -106,6 +106,15 @@
             this.createAttributes();
             this.createElement();
             return this;
+        },
+
+        img: function (src, attrs) {
+            this.el = 'img';
+            this.attrs = attrs;
+            this.attrs.src = src;
+            this.createAttributes();
+            this.createElement();
+            return this;
         }
     };
 

@@ -24,7 +24,7 @@
         render: function () {
             this.elementType();
             this.createAttributes();
-            this.createClosingElement();
+            (this.el.match(/\/$/g)) ? this.createElement() : this.createClosingElement();
         },
 
         elementType: function () {
@@ -74,7 +74,7 @@
         },
 
         createElement: function () {
-            this.element = '<' + this.el + this.attributes + '>';
+            this.element = '<' + this.el.replace(/\/$/g, '') + this.attributes + '>';
             return this;
         },
 

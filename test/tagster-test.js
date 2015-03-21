@@ -13,6 +13,16 @@ describe('Tagster', function () {
         span.should.equal('<span></span>');
     });
 
+    it('should create element without closing tag', function () {
+        var span = new Tagster('span/').element;
+        span.should.equal('<span>');
+    });
+
+    it('should create element without closing tag', function () {
+        var span = new Tagster('img/', { src: 'img/partizan.png', alt: 'Volim Partizan!' }).element;
+        span.should.equal('<img src="img/partizan.png" alt="Volim Partizan!">');
+    });
+
     it('should create header element', function () {
         var header = new Tagster('header', { role: 'header' }, 'Some content').element;
         header.should.equal('<header role="header">Some content</header>');

@@ -19,8 +19,8 @@ describe('Tagster', function () {
     });
 
     it('should create element without closing tag', function () {
-        var span = new Tagster('img/', { src: 'img/partizan.png', alt: 'Volim Partizan!' }).element;
-        span.should.equal('<img src="img/partizan.png" alt="Volim Partizan!">');
+        var image = new Tagster('img/', { src: 'img/partizan.png', alt: 'Volim Partizan!' }).element;
+        image.should.equal('<img src="img/partizan.png" alt="Volim Partizan!">');
     });
 
     it('should create header element', function () {
@@ -104,8 +104,8 @@ describe('Tagster', function () {
     });
 
     it('should create img tag', function () {
-        var style = new Tagster().img('img/srbija.png', { alt: 'Bog cuva Srbe!' }).element;
-        style.should.equal('<img alt="Bog cuva Srbe!" src="img/srbija.png">');
+        var img = new Tagster().img('img/srbija.png', { alt: 'Bog cuva Srbe!' }).element;
+        img.should.equal('<img alt="Bog cuva Srbe!" src="img/srbija.png">');
     });
 
     it('should be extensible', function () {

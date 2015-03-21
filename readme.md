@@ -8,6 +8,8 @@ It works in both node and client-side applications.
 
 ### Elements
 
+Add slash to the end of element name to create element without closing tag.
+
 ```javascript
 var div = new Tagster().element;
 // <div></div>
@@ -17,6 +19,9 @@ var header = new Tagster('header.header', { role: 'header' }).element;
 
 var header = new Tagster('#unique').element;
 // <div id="header"></div>
+
+var image = new Tagster('img/', { src: 'img/partizan.png', alt: 'Volim Partizan!' }).element;
+// <img src="img/partizan.png" alt="Volim Partizan!">
 
 var custom = new Tagster('polymer-ajax', { url: 'http://example.com/json', handleAs: 'json' }).element;
 // <polymer-ajax url="http://example.com/json" handleAs="json"></polymer-ajax>

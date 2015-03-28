@@ -18,7 +18,7 @@ var header = new Tagster('header.header', { role: 'header' }).element;
 // <header role="header" class="header"</header>
 
 var header = new Tagster('#unique').element;
-// <div id="header"></div>
+// <div id="unique"></div>
 
 var image = new Tagster('img/', { src: 'img/partizan.png', alt: 'Volim Partizan!' }).element;
 // <img src="img/partizan.png" alt="Volim Partizan!">
